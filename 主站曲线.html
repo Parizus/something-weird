@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>主站弧线</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<style type="text/css">
+	body{
+		margin: 0 auto;
+		overflow: hidden;
+		width: 100%;
+	}
+	a{ 
+		text-decoration: none; 
+		color: #E2E2E2;
+		padding-left: 5px;
+		padding-right: 5px;
+		-webkit-transition: all 0.3s ease-out;		
+	}
+	a:hover{ 
+		color:#737373; 
+		background-color: #A5C8EF;
+
+	}
+	#header{
+		position: absolute;
+		top: 0px;
+		width: 100%;
+	}
+	#navigat{
+		position: absolute;
+		top: -188px;
+		width: 100%;
+		height: 210px;
+		background-color:#5FAAE8; 
+		z-index: -2;
+		-webkit-transition: all 0.3s ease-out;
+	}
+	#navline{
+		position: absolute;
+		top: 0px;
+		height: 70px;
+	}
+	.transition{
+		-webkit-transition-property: width,margin,opacity,color,background,transform;
+		-webkit-transition-duration: 0.3s,0.3s,0.3s,0.3s,0.3s;
+		-webkit-transition-timing-function: linear,linear,ease-in-out,linear,linear,ease-in-out;
+	}
+	.buttontxt
+	{
+		text-align: center;
+		cursor: default;
+		font-family: "Microsoft Yahei";
+		font-size: 14px;
+		color: #E2E2E2;
+	}
+	.button
+	{
+		width: 60px;
+		height: 25px;
+		margin:0 auto;
+		background:#5FAAE8;
+		border-radius: 5px;
+		height:25px; 
+		line-height:25px; 
+	}
+	.headtxt
+	{
+		text-align: center;
+		cursor: default;
+		font-family: "Microsoft Yahei";
+		font-size: 18px;
+		color: #FFFFFF;
+	}
+	#buttongroup{
+		position: relative;
+		top:-158px;
+		opacity: 0;
+		z-index: -1;
+		-webkit-transition-property: opacity,top;
+		-webkit-transition-duration: 0.6s,0.3s;
+		-webkit-transition-timing-function: ease-out,linear;
+	}
+	#logo{
+		position: absolute;
+		width: 180px;
+		height: 28px;
+		left: 630px;
+		top: 0px;
+	}
+	.option{
+		position: relative;
+		width: 20%;
+		float: right;
+		background-color:#5FAAE8; 
+		text-align: center;
+		height:37px; 
+		line-height:37px;
+	}
+	.butoption{
+		position: relative;
+		width: 20%;
+		float: left;
+		text-align: center;
+		height:35px; 
+		/*line-height:37px;*/
+
+	}
+	.search{
+		margin-top: -20px;
+	}
+	.inputbox{
+		height: 25px;
+		width: 120px;
+		border: none;
+		border-radius: 7px;
+		font-family: "Microsoft Yahei";
+		font-size: 14px;
+		background: #E2E2E2;
+		text-align: center;
+		color: #737373;
+	}
+	.inputbox:focus {
+		background: #FFFFFF ;
+		/*border: solid;*/
+		/*border-width: 1px;*/
+		/*border-color: #E2E2E2;*/
+		outline: none;
+	}
+	.box{
+		margin-top: -10px;
+		margin-right: auto;
+		margin-left: auto;
+		height: 40px;
+		width: 120px;
+		border: solid;
+		border-radius: 7px;
+		border-width: 1px;
+		border-color: #E2E2E2;
+		font-family: "Microsoft Yahei";
+		font-size: 14px;
+		color: #FFFFFF;
+		line-height: 120%；
+	}
+
+
+
+
+
+
+	.nav{
+		margin: 0 auto;
+	}
+	.second_ul { 
+		list-style-type:none; 
+		padding: 0px;
+		margin: 0px;
+		font-size: 12px;
+		opacity: 0;
+	}
+	.second:hover{
+		color: #00f;
+		background-color: #999;
+	}
+	.nav:hover .second_ul{
+		opacity: 1;
+		/*background-color: #A5C8EF;*/
+		border-radius: 5px;
+	}
+
+
+
+
+
+</style>
+<body id="bod">
+	<div onmousemove="mMoveout(this)" id="navigat"></div>
+	<div id="header">
+		<div style="position: absolute; top:0px">
+			<svg id="svg1" width="1440" height="60">
+				<path fill="#5FAAE8" d="M0,0v40h420c200,0,230,20,300,20c70,0,100,-20,300,-20h420V0H0z"></path>
+			</svg>
+		</div>		
+		<div onmousemove="mMovein(Navline)" id="navline"></div>
+		<div onmousemove="mMovein(Navline)" id="logo"><img src="./logo.svg" /></div>
+	</div>
+</div>
+<div onmousemove="mMovein(Navline)" class="headtxt">
+	<div class="option">登陆</div>
+	<div class="option">&nbsp;&nbsp;快速入口</div>
+	<div class="option" style="background-color:transparent"></div>
+	<div class="option" style="float: left;">咨询</div>
+	<div class="option" style="float: left;">图文</div>
+</div>
+
+
+
+
+
+<div id="buttongroup">
+	<div class="butoption" style="float: right;">
+		<form class="search" style="margin-top:0px;" action="" method="get">
+			<input class="inputbox" name="user_search" placeholder="学号" />
+		</form>
+	</div>
+	<div class="butoption" style="float: right;">
+		<div class="nav buttontxt">校内办公
+			<div class="second_ul transition"> 
+				<a href="">社科系统</a>
+				<a href="">科研系统</a>
+				<a href="">财务系统</a>
+			</div>
+		</div>
+	</div>
+	<div class="butoption" style="background-color:transparent;float: right;"></div>
+	<div class="butoption">
+		<div class="button transition">
+			<div onmouseover="mOver(this)" onmouseout="mOut(this)" class="buttontxt transition">
+				通知
+			</div>
+		</div>
+	</div>
+	<div class="butoption">
+		<div class="button transition">
+			<div onmouseover="mOver(this)" onmouseout="mOut(this)" class="buttontxt transition">
+				热点专题
+			</div>
+		</div>
+	</div>
+	<div class="butoption">
+		<div class="button transition">
+			<div onmouseover="mOver(this)" onmouseout="mOut(this)" class="buttontxt transition">
+				新闻
+			</div>
+		</div>
+	</div>
+	<div class="butoption">
+		<div class="button transition">
+			<div onmouseover="mOver(this)" onmouseout="mOut(this)" class="buttontxt transition">
+				知图
+			</div>
+		</div>
+	</div>
+	<div class="butoption">
+		<form class="search" action="" method="get">
+			<input class="inputbox" name="user_search" placeholder="回车以搜索" />
+		</form>
+	</div>
+	<div class="butoption">
+		<div class="nav buttontxt">教务系统
+			<div class="second_ul transition">
+				<a href="">课程中心</a>
+				<a href="">个人门户</a>
+				<a href="">教学服务</a>
+			</div>
+		</div>
+	</div>
+	<div class="butoption">
+		<form class="search" style="margin-top:0px;" action="" method="get">
+			<input class="inputbox" name="user_search" placeholder="密码" />
+		</form>
+	</div>
+	<div class="butoption">
+		<div class="button transition">
+			<div onmouseover="mOver(this)" onmouseout="mOut(this)" class="buttontxt transition">
+				办事指南
+			</div>
+		</div>
+	</div>		
+	<div class="butoption">
+		<div class="button transition">
+			<div onmouseover="mOver(this)" onmouseout="mOut(this)" class="buttontxt transition">
+				知湖活动
+			</div>
+		</div>
+	</div>
+	<div class="butoption">
+		<div class="box">2015年秋季学期<br />第14周</div>
+	</div>
+	<div class="butoption">
+		<div class="nav buttontxt">
+			<div class="second_ul transition" style="font-size: 14px;opacity: 1;">
+				<a href="">湖大文库</a>
+				<a href="">新生宝典</a>
+				<a href="">校园地图</a>
+			</div>
+		</div>
+	</div>
+	<div class="butoption">
+		<div class="button transition" style="width:40px">
+			<div onmouseover="mOver(this)" onmouseout="mOut(this)" class="buttontxt transition">
+				登陆
+			</div>
+		</div>
+	</div>
+	<div class="butoption"></div>
+	<div class="butoption"></div>
+	<div class="butoption"></div>
+	<div class="butoption">
+		<div class="nav buttontxt">
+			<div class="second_ul transition" style="font-size: 14px;opacity: 1;">
+				<a href="">心理</a>
+				<a href="">园区</a>
+				<a href="">湖大家园</a>
+				<a href="">岳麓学子论坛</a>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script type="text/javascript">
+	var Navigat=document.getElementById("navigat");
+	var Navline=document.getElementById("navline");
+	var Butgroup=document.getElementById("buttongroup");
+	window.onload=function(){repos ()};
+	window.onresize=function(){repos ()};
+	writeNavline (Navline,0.5);
+
+	function repos () {
+		var width=window.innerWidth;
+		document.getElementById("header").style.left=-(1440-width)/2+"px";
+	}
+	function mMovein (obj) {
+		var width=window.innerWidth;
+		var x=event.clientX;
+		var y=event.clientY;
+		console.log(x);
+		var num=(event.clientX)/width;
+		var grad=num.toFixed(2);
+		if ((y<=230)&&(y>5)&&(x>5)&&(x<width-5)){
+			Navigat.style.top=0+"px";
+			Butgroup.style.top=26+"px";
+			Butgroup.style.opacity=1;
+			writeNavline (obj,grad);
+		}else{
+			writeNavline (obj,0.5);
+		};
+	}
+	function mMoveout (obj) {
+		var width=window.innerWidth;
+		var x=event.clientX;
+		var y=event.clientY;	
+		console.log(y);	
+		if ((y>200)||(x<5)||(x>width-5)){
+			Navigat.style.top=-188+"px";
+			Butgroup.style.top=-162+"px";
+			Butgroup.style.opacity=0;
+			writeNavline (Navline,0.5);
+		};
+	}
+	function writeNavline (obj,grad) {
+		obj.innerHTML='<svg id="Menu" width="1440" height="63"><linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1440" y2="0"><stop  offset="0" style="stop-color:#5FAAE8"></stop><stop offset='+grad+' style="stop-color:#FFFFFF"></stop><stop  offset="1" style="stop-color:#5FAAE8"></stop></linearGradient><path fill="none" stroke="url(#SVGID_1_)" stroke-width="5" stroke-miterlimit="10" d="M0,40L420,40c200,0,230,20,300,20c70,0,100,-20,300,-20L1440,40"></path></svg>';
+	}
+	function mOver(obj)
+	{
+		// obj.parentNode.style.marginLeft=-35+"px";
+		obj.parentNode.style.width=100+"px";
+		obj.parentNode.style.backgroundColor="#A5C8EF";
+		obj.style.color="#737373";
+	}
+	function mOut(obj)
+	{
+		// obj.parentNode.style.marginLeft=0+"px";
+		obj.parentNode.style.width=60+"px";
+		obj.parentNode.style.backgroundColor="#5FAAE8";
+		obj.style.color="#E2E2E2";
+	}
+	function larger (argument) {
+		// body...
+	}
+
+</script>
+
+</html>
+
+
+
